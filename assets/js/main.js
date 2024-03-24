@@ -41,6 +41,7 @@ window.addEventListener("load", function() {
 	if (storedTime) {
 		music.currentTime = parseFloat(storedTime);
 		music.play();
+		loading.out()
 	}
 });
 

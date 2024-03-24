@@ -6,6 +6,24 @@
 
 var currentTime = 0;
 var music = document.getElementById("bgMusic");
+
+const loading = {
+	container: document.querySelector(".loading"),
+	in(target) {
+		this.container.classList.remove("loading_out");
+		setTimeout(() => {
+			window.location.href = target;
+		}, 1000)
+	},
+	out() {
+		this.container.classList.add("loading_out");
+	}
+};
+window.addEventListener("load", () => {
+	loading.out();
+})
+
+
 // 监听音乐播放事件
 music.addEventListener("timeupdate", function() {
 	currentTime = music.currentTime;
@@ -40,7 +58,8 @@ $("#login-button").click(function (event) {
 	var name = document.getElementById("userName").value;
 	console.log(name);
 	if(name=="gbvjs4u09rdj1f9ef74o7lgnrr" || name==""){name='寿星'}
-	location.href = "main.html?"+'nickname='+name
+	loading.in("main.html?"+'nickname='+name);
+	// location.href = "main.html?"+'nickname='+name
 
 
 });

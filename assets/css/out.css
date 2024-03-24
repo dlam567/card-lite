@@ -1,8 +1,8 @@
-* {
-    padding: 0;
-    margin: 0;
-    font-size: 2vmin;
-}
+/** {*/
+/*    padding: 0;*/
+/*    margin: 0;*/
+/*    font-size: 2vmin;*/
+/*}*/
 
 div .loading {
     display: flex;
@@ -19,18 +19,7 @@ body .loading {
     /*background-color: #17f700;*/
 }
 
-.title {
-    font-family: sans-serif;
-    font-size: 10rem;
-    color: #171717;
-    font-weight: 900;
-    cursor: pointer;
-}
 
-.title span {
-    font-size: 10rem;
-    color: #f7f7f7;
-}
 
 .loading {
     position: fixed;

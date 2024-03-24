@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+    <title>Birthday - Card</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+<section style="display:grid">
+    <div class="card">
+        <div class="box">
+            <div class="img-box">
+                <img src="./images/pic01.jpg" alt="">
+            </div>
+            <div class="con-box">
+                <div>
+                    <img src="images/birthday.gif"  alt=""/>
+                    <h2>Hi，<span id="Name">寿星</span> 生日快乐！</h2>
+                    <p>今天是一个特殊的日子，太阳又转到了第一次照到你的地方，你与所有美好的存在又多了一年的故事。</p>
+                    <p>新的一岁，新的旅程，新的篇章。祝心想事成，学习进步，球技更好。</p>
+                    <p>认识到更多志同道合的朋友，生活中没有烦心事</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="spin">翻转</a>
+
+</section>
+</body>
+
+<audio id="bgMusic" src="music/sunny day.mp3" loop="loop"></audio>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script >
+    let currentTime = 0;
+    let music = document.getElementById("bgMusic");
+    window.onload = function() {
+        var fadeInElement = document.querySelector('.card');
+        fadeInElement.style.opacity = 1; // 触发渐显效果
+    };
+    // 监听音乐播放事件
+    music.addEventListener("timeupdate", function() {
+        currentTime = music.currentTime;
+    });
+
+    // 监听页面离开事件
+    window.addEventListener("beforeunload", function() {
+        sessionStorage.setItem("currentTime", currentTime);
+
+    });
+
+    // 监听页面加载事件
+    window.addEventListener("load", function() {
+        let storedTime = sessionStorage.getItem("currentTime");
+        if (storedTime) {
+            music.currentTime = parseFloat(storedTime);
+            music.play();
+        }
+    });
+    let name = decodeURI(document.URL)//获取到编码的数据并进行解码，推荐
+    //下面是对数据进行处理
+    name=name.slice(name.indexOf("=")+1)
+    console.log(name);
+    document.getElementById("Name").innerHTML=name;
+
+    $("#spin").click(function () {
+
+        if (document.querySelector('.box').style.transform === 'rotateY(180deg)'){
+            document.querySelector('.box').style.transform = '';
+            // flag = 0;
+        }
+        else{
+            document.querySelector('.box').style.transform = 'rotateY(180deg)';
+            // flag = 1;
+        }
+
+    });
+</script>
+
+</html>

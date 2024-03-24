@@ -19,9 +19,9 @@ const loading = {
 		this.container.classList.add("loading_out");
 	}
 };
-window.addEventListener("load", () => {
+
 	loading.out();
-})
+
 
 
 // 监听音乐播放事件
@@ -41,7 +41,6 @@ window.addEventListener("load", function() {
 	if (storedTime) {
 		music.currentTime = parseFloat(storedTime);
 		music.play();
-		loading.out()
 	}
 });
 

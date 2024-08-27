@@ -4,6 +4,15 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+// =========== 必要修改项 =============
+let DefaultName = "寿星";  // Important !!!!!!!!!!!!!!!!!!!!!!!===!!!!!!!!!!!!!!!!!!!!!!!!!!!
+let Birthday_date = "02/02";
+// =========!!!!!!!!!!!!!!!!=========
+
+document.getElementById("userName").value=DefaultName;
+document.getElementById("Birthday_Date").innerHTML=Birthday_date;
+document.title = "Happy Birthday ! | " + Birthday_date
+
 var currentTime = 0;
 var music = document.getElementById("bgMusic");
 
@@ -58,7 +67,7 @@ $("#login-button").click(function (event) {
 	var name = document.getElementById("userName").value;
 	console.log(name);
 	if(name=="gbvjs4u09rdj1f9ef74o7lgnrr" || name==""){name='寿星'}
-	loading.in("main.html?"+'nickname='+name);
+	loading.in("view.html?"+'nickname='+name);
 	// location.href = "main.html?"+'nickname='+name
 
 

@@ -32,6 +32,31 @@ const loading = {
 	loading.out();
 
 
+// ============================ 随机背景 ==================================
+let pics = ["bg", "p01", "p02", "p03", "p04", "p05"];
+// 生成一个介于0到list.length-1之间的随机索引值
+let randomIndex = Math.floor(Math.random() * pics.length);
+// 根据随机索引获取相应位置上的元素
+let picSc = pics[randomIndex];
+let pat = "#bg:after{background-image:url(\"../../images/" + picSc + ".jpg\");}";
+let stl = document.createElement("style")
+stl.innerHTML =
+	'#bg:after {\n' +
+	'\t\t\t-moz-transform: scale(1.125);\n' +
+	'\t\t\t-webkit-transform: scale(1.125);\n' +
+	'\t\t\t-ms-transform: scale(1.125);\n' +
+	'\t\t\ttransform: scale(1.125);\n' +
+	'\t\t\t-moz-transition: -moz-transform 0.325s ease-in-out, -moz-filter 0.325s ease-in-out;\n' +
+	'\t\t\t-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;\n' +
+	'\t\t\t-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;\n' +
+	'\t\t\ttransition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;\n' +
+	'\t\t\tbackground-image:url("./images/'+picSc+'.jpg");\n' +
+	'\t\t\tbackground-position: center;\n' +
+	'\t\t\tbackground-size: cover;\n' +
+	'\t\t\tbackground-repeat: no-repeat;\n' +
+	'\t\t\tz-index: 1;\n' +
+	'\t\t}'
+document.head.appendChild(stl)
 
 // 监听音乐播放事件
 music.addEventListener("timeupdate", function() {

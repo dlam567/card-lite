@@ -6,7 +6,7 @@
 
 // =========== 必要修改项 =============
 let DefaultName = "寿星";  // Important !!!!!!!!!!!!!!!!!!!!!!!===!!!!!!!!!!!!!!!!!!!!!!!!!!!
-let Birthday_date = "02/02";
+let Birthday_date = "10/03";
 // =========!!!!!!!!!!!!!!!!=========
 
 document.getElementById("userName").value=DefaultName;

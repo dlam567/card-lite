@@ -5,8 +5,8 @@
 */
 
 // =========== 必要修改项 =============
-let DefaultName = "REH";  // Important !!!!!!!!!!!!!!!!!!!!!!!===!!!!!!!!!!!!!!!!!!!!!!!!!!!
-let Birthday_date = "10/13";
+let DefaultName = "STH";  // Important !!!!!!!!!!!!!!!!!!!!!!!===!!!!!!!!!!!!!!!!!!!!!!!!!!!
+let Birthday_date = "10/26";
 // =========!!!!!!!!!!!!!!!!=========
 
 document.getElementById("userName").value=DefaultName;

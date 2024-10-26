@@ -42,7 +42,7 @@ section{
   animation: marquee 10s linear infinite;
 
     /* 创建线性渐变背景 */
-    background: linear-gradient(to right, rgb(69, 222, 201) 30%, rgba(91, 43, 210, 0.93) 60%);
+    background: linear-gradient(to right, rgba(45, 48, 229) 30%, rgb(69, 222, 201) 80%);
 
     /* 使文字颜色透明，背景渐变作为文字的颜色 */
     -webkit-background-clip: text;
